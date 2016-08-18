@@ -17,12 +17,12 @@ import com.sun.jersey.api.client.config.DefaultClientConfig;
  */
 public class RestfulServiceClient {
 
-	public Customer getCustomerList(int cid) throws IOException {
+	public static Customer getCustomerList(int cid) throws IOException {
 
 		Customer customer = null;
 
 		try {
-			/* Client client = Client.create(); */
+			
 			DefaultClientConfig defaultClientConfig = new DefaultClientConfig();
 			defaultClientConfig.getClasses().add(JacksonJsonProvider.class);
 			Client client = Client.create(defaultClientConfig);
@@ -35,8 +35,6 @@ public class RestfulServiceClient {
 
 			System.out.println("Output from Server .... \n");
 			 customer = response.getEntity(Customer.class);
-	
-			System.out.println(customer.getFirstName());
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -44,21 +42,6 @@ public class RestfulServiceClient {
 		return customer;
 	}
 
-	public static void main(String[] args) {
 
-		RestfulServiceClient client = new RestfulServiceClient();
-
-		try {
-
-			Customer customer = client.getCustomerList(3);
-
-			System.out.println(customer);
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-
-	}
 
 }

@@ -7,6 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * This class have the properties of Service Plan
+ * @author Jude Mariarajan
+ *
+ */
+
 @Entity
 @Table(name = "service")
 public class ServicePlan  {

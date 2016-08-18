@@ -12,7 +12,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-//@XmlRootElement
+/**
+ * This class have the properties of Customer
+ * @author Jude Mariarajan
+ *
+ */
+
 @Entity
 @Table(name = "customer")
 public class Customer {

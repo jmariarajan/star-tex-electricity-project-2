@@ -21,8 +21,6 @@ public class SOAPServiceClient {
 		
 		List<ServicePlan> serviceList = service.getElectricityServicePlan();
 		
-		System.out.println(serviceList);
-		
 		return serviceList;		
 	}
 	

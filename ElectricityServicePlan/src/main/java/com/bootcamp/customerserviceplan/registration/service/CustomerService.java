@@ -15,7 +15,7 @@ import com.bootcamp.customerserviceplan.registration.service.soapclient.ServiceP
 /**
  * This class will pass the customer details from controller to DAO
  * 
- * @author Bootcamp User 016
+ * @author Jude Mariarajan
  *
  */
 @Service
@@ -33,9 +33,14 @@ public class CustomerService {
 	@Transactional
 	public void addCustomer(Customer customer) {
 		this.customerDAO.addCustomer(customer);
-		getServicePlans(customer);
+		
+		
 	}
 
+	/**
+	 * Send the message to second application
+	 * @param customer
+	 */
 	public void sendMessage(Customer customer) {
 
 		int serviceId = SOAPServiceClient.getServiceId();
@@ -44,12 +49,14 @@ public class CustomerService {
 
 		String message = customerId + ":" + serviceId;
 
-		System.out.println("Message : " + message);
-		
 		msgSender.sendMessage(message);
 
 	}
-	
+/*	
+	*//**
+	 * Getting the service Plan
+	 * @param customer
+	 *//*
 	public static void getServicePlans(Customer customer){
 		
 		List<ServicePlan> planDetails = (List<ServicePlan>)SOAPServiceClient.getServicePlan();
@@ -66,14 +73,7 @@ public class CustomerService {
 		customer.setPlanDetail(plan);
 		
 		
-	}
+	}*/
 	
-	/*public static void main(String[] args) {
-		
-		Customer customer = new Customer();
-		
-		getServicePlans(customer);
-		
-	}
-*/
+
 }

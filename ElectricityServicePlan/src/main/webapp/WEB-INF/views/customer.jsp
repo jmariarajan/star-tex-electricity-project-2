@@ -18,7 +18,7 @@
 First Name : ${customer.firstName}
 </br>
 </br>
-Last Name : ${customer.firstName}
+Last Name : ${customer.lastName}
 </br>
 </br>
 Phone No : ${customer.phoneNo}
@@ -32,13 +32,13 @@ Email : ${customer.email}
 <fieldset style="width:300px;">
 <legend><b>Service Plan Information</b></legend>
 </br>
- Service ID: ${customer.planDetail.serviceId}
+ Service ID: ${serviceId}
 </br></br>
- Service Plan : ${customer.planDetail.servicePlan}
+ Service Plan : ${servicePlan}
  </br></br>
- Service Charge : ${customer.planDetail.serviceCharge}
+ Service Charge : ${serviceCharge}
  </br></br>
- Service Period : ${customer.planDetail.servicePeriod}
+ Service Period : ${servicePeriod}
 </fieldset>
 
 </body>

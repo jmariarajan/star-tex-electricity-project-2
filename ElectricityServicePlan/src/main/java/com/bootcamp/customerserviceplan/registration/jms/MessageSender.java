@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * This class will send the message via JMS 
- * @author Bootcamp User 016
+ * @author Jude Mariarajan
  *
  */
 @Component("messageSender")

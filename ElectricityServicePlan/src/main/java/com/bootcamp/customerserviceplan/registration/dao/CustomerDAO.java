@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.bootcamp.customerserviceplan.registration.model.Customer;
 /**
  * Adding the customer details into database
- * @author Bootcamp User 016
+ * @author Jude Mariarajan
  *
  */
 @Repository
