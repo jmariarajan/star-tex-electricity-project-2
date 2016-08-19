@@ -4,6 +4,11 @@ import javax.transaction.Transactional;
 
 import com.bootcamp.utilityservice.electricityplan.dao.MessageDAO;
 
+/**
+ * This class will get the customerId and ServiceId from messageDAO 
+ * @author Jude Mariarajan
+ *
+ */
 public class MessageService {
 	
 	@Transactional
