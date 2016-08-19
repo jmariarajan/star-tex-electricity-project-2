@@ -20,7 +20,7 @@ public class ServicePlanDAO {
 
 		List<ServicePlan> listOfPlans = new ArrayList<ServicePlan>();
 
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateUtil.getSession();
 
 		try {
 
@@ -36,7 +36,7 @@ public class ServicePlanDAO {
 
 		} finally {
 
-			session.close();
+			HibernateUtil.closeSession();
 		}
 
 		if (listOfPlans.isEmpty()) {

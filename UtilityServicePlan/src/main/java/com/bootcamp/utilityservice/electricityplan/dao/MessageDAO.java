@@ -19,7 +19,7 @@ public class MessageDAO {
 
 	public void addCustomerServicePlan(int customerId, int serviceId) {
 
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateUtil.getSession();
 		
 		Transaction tx = session.beginTransaction();
 		
@@ -38,7 +38,7 @@ public class MessageDAO {
 			
 		} finally {
 			
-			session.close();
+			HibernateUtil.closeSession();
 		}
 		
 

@@ -28,7 +28,7 @@ public class Customer{
 	
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "serviceId")
-	private ServicePlan servicePlan;
+	private ServicePlan planDetail;
 	
 
 	/**
@@ -107,17 +107,19 @@ public class Customer{
 	}
 
 	/**
-	 * @return the servicePlan
+	 * @return the planDetail
 	 */
-	public ServicePlan getServicePlan() {
-		return servicePlan;
+	public ServicePlan getPlanDetail() {
+		return planDetail;
 	}
 
 	/**
-	 * @param servicePlan the servicePlan to set
+	 * @param planDetail the planDetail to set
 	 */
-	public void setServicePlan(ServicePlan servicePlan) {
-		this.servicePlan = servicePlan;
+	public void setPlanDetail(ServicePlan planDetail) {
+		this.planDetail = planDetail;
 	}
+
+
 
 }
