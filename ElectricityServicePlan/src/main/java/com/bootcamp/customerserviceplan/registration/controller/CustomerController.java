@@ -14,6 +14,7 @@ import com.bootcamp.customerserviceplan.registration.model.Customer;
 import com.bootcamp.customerserviceplan.registration.service.CustomerService;
 import com.bootcamp.customerserviceplan.registration.service.RestfulServiceClient;
 import com.bootcamp.customerserviceplan.registration.service.SOAPServiceClient;
+import com.bootcamp.customerserviceplan.registration.service.soapclient.ServicePlan;
 
 /**
  * This class get the customer information from the web page
@@ -34,24 +35,23 @@ public class CustomerController {
 	}
 
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
-	public String addCustomer(ModelMap model, @ModelAttribute("customer") Customer customer) throws IOException {
+	public String addCustomer(ModelMap model, @ModelAttribute("customer") Customer customer) {
 
 		if (customer != null) {
 
-			customerService.addCustomer(customer);
+			int customerId = customerService.addCustomer(customer);
 			customerService.sendMessage(customer);
-			
-			int serviceId = SOAPServiceClient.getServicePlan().get(2).getServiceId();
-			String servicePlan = SOAPServiceClient.getServicePlan().get(2).getServicePlan();
-			String serviceCharge = SOAPServiceClient.getServicePlan().get(2).getServiceCharge();
-			String servicePeriod = SOAPServiceClient.getServicePlan().get(2).getServicePeriod();
 
-			model.put("customer", customer);
+			customer = customerService.getCustomerDetails(customerId);
 
-			model.addAttribute("serviceId", serviceId);
-			model.addAttribute("servicePlan", servicePlan);
-			model.addAttribute("serviceCharge", serviceCharge);
-			model.addAttribute("servicePeriod", servicePeriod);
+			if (customer != null) {
+
+				model.put("customer", customer);
+
+			} else {
+				
+				return "error";
+			}
 		}
 
 		return "customer";

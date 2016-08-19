@@ -7,6 +7,8 @@ import static org.mockito.Mockito.when;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.bootcamp.customerserviceplan.registration.service.SOAPServiceClient;
+
 public class SOAPServiceClientTest {
 
 	SOAPServiceClient clientTest;
@@ -19,9 +21,13 @@ public class SOAPServiceClientTest {
 	@Test
 	public void getServiceIdTest() {
 
-		when(clientTest.getServiceId()).thenReturn(30001);
+		when(clientTest.getServiceId()).thenReturn(40001);
 
-		assertEquals(clientTest.getServiceId(), 30001);
+		System.out.println(clientTest.getServiceId());
+		
+		assertEquals(clientTest.getServiceId(), 40001);
+		
+		
 
 	}
 

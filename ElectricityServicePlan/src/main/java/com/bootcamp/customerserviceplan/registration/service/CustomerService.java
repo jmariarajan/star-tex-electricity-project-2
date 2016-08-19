@@ -1,5 +1,6 @@
 package com.bootcamp.customerserviceplan.registration.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -31,9 +32,11 @@ public class CustomerService {
 	}
 
 	@Transactional
-	public void addCustomer(Customer customer) {
-		this.customerDAO.addCustomer(customer);
+	public int addCustomer(Customer customer) {
 		
+		int customerId = this.customerDAO.addCustomer(customer);
+		
+		return customerId;
 		
 	}
 
@@ -43,7 +46,7 @@ public class CustomerService {
 	 */
 	public void sendMessage(Customer customer) {
 
-		int serviceId = SOAPServiceClient.getServiceId();
+		int serviceId = new SOAPServiceClient().getServiceId();
 		
 		int customerId = customer.getId();
 
@@ -52,28 +55,24 @@ public class CustomerService {
 		msgSender.sendMessage(message);
 
 	}
-/*	
-	*//**
-	 * Getting the service Plan
-	 * @param customer
-	 *//*
-	public static void getServicePlans(Customer customer){
+
+	
+	public Customer getCustomerDetails(int customerId){
 		
-		List<ServicePlan> planDetails = (List<ServicePlan>)SOAPServiceClient.getServicePlan();
+		Customer customer = null;
 		
-		ServicePlan servicePlan = planDetails.get(2);
+		try {
+			
+			customer = RestfulServiceClient.getCustomerList(customerId);
 		
-		com.bootcamp.customerserviceplan.registration.model.ServicePlan plan = new com.bootcamp.customerserviceplan.registration.model.ServicePlan();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 		
-		plan.setServiceId(servicePlan.getServiceId());
-		plan.setServicePlan(servicePlan.getServicePlan());
-		plan.setServiceCharge(servicePlan.getServiceCharge());
-		plan.setServicePeriod(servicePlan.getServicePeriod());
+		return customer;
 		
-		customer.setPlanDetail(plan);
-		
-		
-	}*/
+	}
 	
 
 }

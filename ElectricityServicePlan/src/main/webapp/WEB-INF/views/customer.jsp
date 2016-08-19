@@ -32,13 +32,13 @@ Email : ${customer.email}
 <fieldset style="width:300px;">
 <legend><b>Service Plan Information</b></legend>
 </br>
- Service ID: ${serviceId}
+ Service ID: ${customer.planDetail.serviceId}
 </br></br>
- Service Plan : ${servicePlan}
+ Service Plan : ${customer.planDetail.servicePlan}
  </br></br>
- Service Charge : ${serviceCharge}
+ Service Charge : ${customer.planDetail.serviceCharge}
  </br></br>
- Service Period : ${servicePeriod}
+ Service Period : ${customer.planDetail.servicePeriod}
 </fieldset>
 
 </body>

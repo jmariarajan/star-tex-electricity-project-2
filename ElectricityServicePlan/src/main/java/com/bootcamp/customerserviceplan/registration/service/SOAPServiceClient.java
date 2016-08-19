@@ -24,9 +24,9 @@ public class SOAPServiceClient {
 		return serviceList;		
 	}
 	
-	public static int getServiceId(){
+	public int getServiceId(){
 		
-		int serviceId = SOAPServiceClient.getServicePlan().get(2).getServiceId();
+		int serviceId = SOAPServiceClient.getServicePlan().get(3).getServiceId();
 		
 		return serviceId;		
 	}
