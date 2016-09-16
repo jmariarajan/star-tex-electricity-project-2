@@ -17,7 +17,7 @@ import com.sun.jersey.api.client.config.DefaultClientConfig;
  */
 public class RestfulServiceClient {
 
-	public static Customer getCustomerList(int cid) throws IOException {
+	public static Customer getCustomerDetails(int cid) throws IOException {
 
 		Customer customer = null;
 

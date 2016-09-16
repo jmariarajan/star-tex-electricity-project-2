@@ -4,6 +4,11 @@ import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
+/**
+ * This class get the message from the message receiver and send to message service
+ * @author Bootcamp User 016
+ *
+ */
 public class MessageReceiver implements MessageListener {
 
 	@Override

@@ -12,7 +12,7 @@ public class ServicePlanDAO {
 
 	/**
 	 * This class will get the Service Plans from the database
-	 * 
+	 * Save all the service plans as a list
 	 * @return listOfPlans
 	 */
 	@SuppressWarnings("unchecked")

@@ -11,7 +11,8 @@ import com.bootcamp.utilityservice.electricityplan.dao.ServicePlanDAO;
 import com.bootcamp.utilityservice.electricityplan.model.ServicePlan;
 
 /**
- * This class returns the service List
+ * This class implements the ElectricityServicePlan Interface
+ * This class returns the service List by calling the getServicePlanDAO method from the ServicePlanDAO
  * @author Jude Mariarajan
  * @return serviceList
  *

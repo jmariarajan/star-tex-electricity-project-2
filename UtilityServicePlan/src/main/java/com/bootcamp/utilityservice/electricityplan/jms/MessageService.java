@@ -16,7 +16,7 @@ public class MessageService {
 		
 		MessageDAO messageDAO = new MessageDAO();
 		
-		messageDAO.addCustomerServicePlan(customerId, serviceId);
+		messageDAO.addServiceId(customerId, serviceId);
 		
 		
 	}

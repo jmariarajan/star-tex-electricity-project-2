@@ -7,7 +7,7 @@ import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Component;
 
 /**
- * This class will send the message via JMS 
+ * This class is a message creator by the session 
  * @author Jude Mariarajan
  *
  */

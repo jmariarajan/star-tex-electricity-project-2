@@ -10,26 +10,33 @@ import com.bootcamp.utilityservice.electricityplan.model.Customer;
 import com.bootcamp.utilityservice.electricityplan.utility.HibernateUtil;
 
 /**
- * This class will add the serviceId according to the customerId
+ * This class will update the serviceId in the Customer Details according to the customerId
  * 
  * @author Jude Mariarajan
  *
  */
 public class MessageDAO {
 
-	public void addCustomerServicePlan(int customerId, int serviceId) {
+	public void addServiceId(int customerId, int serviceId) {
 
 		Session session = HibernateUtil.getSession();
 		
 		Transaction tx = session.beginTransaction();
 		
 		try {
+			
 			Query query = session.createQuery("update Customer set serviceId = :serviceId" + " where id = :customerId");
+			
 			query.setParameter("serviceId", serviceId);
+			
 			query.setParameter("customerId", customerId);
+			
 			System.out.println(query);
+			
 			int row = query.executeUpdate();
+			
 			System.out.println(row);
+			
 			tx.commit();
 			
 			

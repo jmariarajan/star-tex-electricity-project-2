@@ -7,6 +7,7 @@
 <title>Error Page</title>
 </head>
 <body>
-<h3>Sorry ! Try Again !</h3>
+<h3>Star Tex Customer Registration</h3>
+<h3><font color="red">Sorry ! Try Again !</font></h3>
 </body>
 </html>

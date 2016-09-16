@@ -4,6 +4,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+/** 
+ * This class build the hibernate session and close the hibernate session
+ * This class will call by DAO layer classes for database connectivity 
+ * @author Bootcamp User 016
+ *
+ */
 @SuppressWarnings("deprecation")
 public class HibernateUtil {
 

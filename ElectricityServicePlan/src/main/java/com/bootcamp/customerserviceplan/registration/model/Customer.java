@@ -13,7 +13,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- * This class have the properties of Customer
+ * This class have the properties of Customers
+ * ServicePlan class associated with this class
  * @author Jude Mariarajan
  *
  */

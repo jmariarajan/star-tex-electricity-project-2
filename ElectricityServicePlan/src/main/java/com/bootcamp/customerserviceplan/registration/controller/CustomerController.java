@@ -28,6 +28,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 
+	// Displaying Form
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String displayForm(Model model) {
 		model.addAttribute("customer", new Customer());

@@ -15,7 +15,7 @@ import com.bootcamp.customerserviceplan.registration.service.soapclient.ServiceP
 
 /**
  * This class will pass the customer details from controller to DAO
- * 
+ * Send the customerID and serviceId to the Second Application
  * @author Jude Mariarajan
  *
  */
@@ -63,7 +63,7 @@ public class CustomerService {
 		
 		try {
 			
-			customer = RestfulServiceClient.getCustomerList(customerId);
+			customer = RestfulServiceClient.getCustomerDetails(customerId);
 		
 		} catch (IOException e) {
 			
